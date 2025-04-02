@@ -30,7 +30,7 @@ const Nav = () => {
   const pathname = usePathname();
   return (
     <>
-      <div className="flex items-center justify-between px-3 py-2">
+      <div className="flex items-center justify-between px-3 py-2 text-white">
         <div className="text-2xl">
           Lasioweb <span className="text-4xl text-green-600">.</span>
         </div>
@@ -65,7 +65,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <div id="mobilenav" className="hidden">
+      <div id="mobilenav" className="hidden  text-white">
         <div className="absolute right-0 pe-2 pt-1" onClick={hideNav}>
           <X className="w-12 h-12" />
         </div>
