@@ -29,8 +29,8 @@ const hideNav = () => {
 const Nav = () => {
   const pathname = usePathname();
   return (
-    <>
-      <div className="flex items-center justify-between px-3 py-2 text-white">
+    <div>
+      <div className="flex items-center justify-between px-3 py-2">
         <div className="text-2xl">
           Lasioweb <span className="text-4xl text-green-600">.</span>
         </div>
@@ -40,7 +40,7 @@ const Nav = () => {
               .getElementById("mobilenav")
               .setAttribute(
                 "class",
-                "w-screen h-screen top-0 fixed z-10 bg-black"
+                "w-screen h-screen top-0 fixed z-10 bg-black text-white"
               );
           }}
           className="absolute right-0 p-3"
@@ -65,26 +65,30 @@ const Nav = () => {
         </div>
       </div>
 
-      <div id="mobilenav" className="hidden  text-white">
-        <div className="absolute right-0 pe-2 pt-1" onClick={hideNav}>
-          <X className="w-12 h-12" />
+      <div id="mobilenav" className="hidden">
+        <div
+          className="absolute right-0 me-4 mt-3 flex items-center gap-3"
+          onClick={hideNav}
+        >
+          <p className="text-xl">close</p>
+          <X className="w-10 h-10" />
         </div>
-        <ul className="flex flex-col h-full gap-3 justify-center items-center">
+        <ul className="flex flex-col h-full gap-5 justify-center items-center">
           {links.map((link, index) => (
-            <li key={index}>
-              <a
+            <li key={index} onClick={hideNav}>
+              <Link
                 className={`uppercase text-2xl py-2 ${
-                  link.path === pathname && ""
+                  link.path === pathname && "text-gray-400"
                 }`}
                 href={link.path}
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

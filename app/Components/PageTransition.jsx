@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 const PageTransition = ({ children }) => {
   const pathname = usePathname();
+  
   return (
     <AnimatePresence>
       <div key={pathname}>
