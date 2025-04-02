@@ -45,7 +45,7 @@ const Nav = () => {
           }}
           className="absolute right-0 p-3"
         >
-          <Menu className="w-12 h-12" />
+          <Menu className="w-12 h-12 md:hidden" />
         </div>
         <div className="hidden md:block">
           <ul className="flex gap-3">
